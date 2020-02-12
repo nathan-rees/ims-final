@@ -48,6 +48,7 @@ public class SetUp
 			System.out.println("fingers too t h i c c");
 			intro();
 		}
+		intro();
 	}
 	public void item() {
 		System.out.println("Enter product name,cost");
