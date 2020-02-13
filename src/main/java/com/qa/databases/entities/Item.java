@@ -4,6 +4,7 @@ public class Item {
 	private String productName;
 	private long id;
 	private float cost;
+	private long id;
 
 	public Item(long id,String productName,float cost) {
 		this.productName=productName;

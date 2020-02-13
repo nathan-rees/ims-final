@@ -12,10 +12,15 @@ public class MysqlOrderlineDao implements Dao<Integer>
 {
 	private Connection connection;
 	private int items_id,orders_id,quantity;
-	public MysqlOrderlineDao(String password,int items_id,int orders_id,int quantity) throws SQLException 
+	public MysqlOrderlineDao(String password,int items_id,int orders_id,int quantity) 
 	{	
 		
-		this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
+		try {
+			this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.items_id=items_id;
 		this.orders_id=orders_id;
 		this.quantity=quantity;
