@@ -21,6 +21,9 @@ public class SetUp
 		intro();
 	}
 	public String crud() {
+		/**
+		 * sees what the user wants to do with the data
+		 */
 		System.out.println("press 1 for create ");
 		System.out.println("press 2 for viewing all");
 		System.out.println("press 3 for update ");
@@ -29,11 +32,16 @@ public class SetUp
 	}
 	public void intro()
 	{
+		/**
+		 * gets the password for the database.
+		 * makes the user to enter a customer or item to see if they want to add it
+		 */
 		System.out.println("Enter the Password for the database..");
 		password=userInput();
 		System.out.println("Press 1 for editing a customer");
 		System.out.println("Press 2 for editing an order");
 		System.out.println("Press 3 for editing an item");
+		System.out.println("Press 4 for editing an orderline");
 		String input=userInput();
 		
 		
@@ -46,13 +54,48 @@ public class SetUp
 		}else if(input.equals("3"))
 		{
 			item();
-		}else {
+		}else if(input.equals("4")) {
+			orderline();
+		}
+		
+		else {
 			System.out.println("fingers too t h i c c");
 			intro();
 		}
 		intro();
 	}
+	private void orderline() {
+		// TODO Auto-generated method stub
+		System.out.println("Enter items ID,orders ID, quantity");
+		int itemsID=Integer.valueOf(userInput());
+		int orderID=Integer.valueOf(userInput());
+		int quantity=Integer.valueOf(userInput());
+		MysqlOrderlineDao orderline=new MysqlOrderlineDao(password,itemsID,orderID,quantity);
+		String input=crud();
+	
+		
+		 if(input.equals("1")){
+			 orderline.create(2);
+			 System.out.println("Created orderline successfully");
+		 }else if(input.equals("2")){
+			 System.out.println("I dont know why you would want to this..");
+			 
+		 }else if(input.equals("3")){
+			 orderline.update(2);
+			 System.out.println("Updated orderline successfully");
+		 }else if(input.equals("4")){
+			 orderline.delete(2);
+			 System.out.println("Deleted orderline successfully");
+		 }
+		
+	}
 	public void item() {
+		/**
+		 * creates item 
+		 * starts a connection
+		 * asks what the user wants to do
+		 * and then executes that crud functionality
+		 */
 		createItem();
 		
 		MysqlItemDao i=new MysqlItemDao(password);
@@ -80,29 +123,33 @@ public class SetUp
 			System.out.println("(deleting is based product name entered)");
 			i.delete(item);//delete an item based on its product name
 			System.out.println("Deleted successfully");
-		}else if(input.equals("0"))
-		{
-			createCustomer();
-			orderlineAdd(item,customer);
-		}
+		}//else if(input.equals("0"))
+//		{
+//			createCustomer();
+//			orderlineAdd(item,customer);
+//		}
 	}
-	public void orderlineAdd(Item item,Customer customer)
-	{
-		System.out.println("Enter order ID,quantity");
-		int orderID=Integer.valueOf(userInput());
-		int quantity=Integer.valueOf(userInput());
-		
-		try {
-			MysqlOrderlineDao orderline=new MysqlOrderlineDao(password,(int)item.getId(),orderID,quantity);
-			orderline.create(69);//adding an  linking up the order and item
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
+//	public void orderlineAdd(Item item,Customer customer)
+//	{
+//		/**
+//		 * basicaly takes in an existing item and order
+//		 * and then it will create an orderline and link both item and order
+//		 */
+//		System.out.println("Enter order ID,quantity");
+//		int orderID=Integer.valueOf(userInput());
+//		int quantity=Integer.valueOf(userInput());
+//		
+//		try {
+//			MysqlOrderlineDao orderline=new MysqlOrderlineDao(password,(int)item.getId(),orderID,quantity);
+//			orderline.create(69);//adding an  linking up the order and item
+//			
+//			
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//	}
 	public void createItem() {
 		System.out.println("Enter product id,name,cost");
 		long id=Long.valueOf(userInput());

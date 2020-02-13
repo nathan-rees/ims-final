@@ -10,12 +10,21 @@ import com.qa.databases.entities.Customer;
 
 public class MysqlOrderlineDao implements Dao<Integer>
 {
+	/**
+	 * creates the connection
+	 * holds the crud functionalities that executes the sql statemnts
+	 */
 	private Connection connection;
 	private int items_id,orders_id,quantity;
-	public MysqlOrderlineDao(String password,int items_id,int orders_id,int quantity) throws SQLException 
+	public MysqlOrderlineDao(String password,int items_id,int orders_id,int quantity) 
 	{	
 		
-		this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
+		try {
+			this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.items_id=items_id;
 		this.orders_id=orders_id;
 		this.quantity=quantity;
@@ -27,7 +36,6 @@ public class MysqlOrderlineDao implements Dao<Integer>
 			statement = connection.createStatement();
 			statement.executeUpdate("insert into orderline(items_id,orders_id,quantity) values("+items_id+","+orders_id+","+quantity+")");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	
@@ -46,7 +54,6 @@ public class MysqlOrderlineDao implements Dao<Integer>
 			statement.execute("update orderline set quantity="+quantity+" where orders_id="+orders_id);
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -60,7 +67,6 @@ public class MysqlOrderlineDao implements Dao<Integer>
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
