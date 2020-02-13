@@ -12,11 +12,14 @@ public class TestItem {
 	public void test() {
 	Item item=new Item(1,"strong",69);	
 	assertNotNull(item);
-	item.getCost();
-	item.getId();
-	item.getProductName();
 	item.setCost(2);
 	item.setId(2);
+	item.getCost();
+	
+
+	assertEquals(2,item.getId());
+	item.getProductName();
+	
 	item.setProductName("");
 	}
 

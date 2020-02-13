@@ -12,7 +12,8 @@ public class TestSetUp {
 
 	@Test
 	public void test() {
-		MysqlCustomerDao d=new MysqlCustomerDao("noobb");
+		SetUp d=new SetUp();
+		
 		assertNotNull(d);	
 		
 		

@@ -18,7 +18,7 @@ public class SetUp
 	private Item item;
 	public SetUp()
 	{
-		intro();
+		
 	}
 	public String crud() {
 		/**

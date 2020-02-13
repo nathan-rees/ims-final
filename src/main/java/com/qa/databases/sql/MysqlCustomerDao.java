@@ -70,6 +70,11 @@ public class MysqlCustomerDao implements Dao<Customer>{
 
 	
 	public ArrayList<Customer> readAll() {
+		/**
+		 * Queries for all customers in the database and then
+		 * 
+		 * returns an array of customers
+		 */
 		ArrayList<Customer> customers = new ArrayList<Customer>();
 		try {
 			Statement statement = connection.createStatement();
