@@ -123,33 +123,8 @@ public class SetUp
 			System.out.println("(deleting is based product name entered)");
 			i.delete(item);//delete an item based on its product name
 			System.out.println("Deleted successfully");
-		}//else if(input.equals("0"))
-//		{
-//			createCustomer();
-//			orderlineAdd(item,customer);
-//		}
-	}
-//	public void orderlineAdd(Item item,Customer customer)
-//	{
-//		/**
-//		 * basicaly takes in an existing item and order
-//		 * and then it will create an orderline and link both item and order
-//		 */
-//		System.out.println("Enter order ID,quantity");
-//		int orderID=Integer.valueOf(userInput());
-//		int quantity=Integer.valueOf(userInput());
-//		
-//		try {
-//			MysqlOrderlineDao orderline=new MysqlOrderlineDao(password,(int)item.getId(),orderID,quantity);
-//			orderline.create(69);//adding an  linking up the order and item
-//			
-//			
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//	}
+		}
+		}
 	public void createItem() {
 		System.out.println("Enter product id,name,cost");
 		long id=Long.valueOf(userInput());

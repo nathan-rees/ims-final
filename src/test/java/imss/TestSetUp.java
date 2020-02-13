@@ -1,7 +1,6 @@
 package imss;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -14,7 +13,8 @@ public class TestSetUp {
 	public void test() {
 		fail("Not yet implemented");
 		SetUp setup=new SetUp();
-		assertNull(setup);
+		assertNotNull(setup);
+		
 		
 	}
 	
