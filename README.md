@@ -1,17 +1,18 @@
 # Project Title
 
 This is an inventory management system. It uses a persistant database storage hosted from a GCP server. Implemented in Java 8
-I also have a jenkins server running that is configured to take this github repsoitory so sonarqube can run static code analysis on my project- assisting in the development and testing.
+I also have a jenkins server running that is configured to use this github repsoitory and build so sonarqube can run static code analysis on my project- where i will propagate the issues to my github.
 
 ## Getting Started
 
 First use "git clone" to copy the repository to your local machine.
+Create a database (using my sql script "inventory.sql") on a server. Enter the ip and port used for this DB on the program source code.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+install maven and jenkins on a VM (make sure to enable traffic to port 3306 and 8080). Grab the password for jeknins inside of your VM and access it through port 8080 on another machine (using http). Create a new item and post your github in the config. Add some execute commands to the config that builds the project and sends it to sonarqube.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You will need to have a DBMS,git,java ide, on your local machine cloud service (or server)
 
 ```
 Give examples
