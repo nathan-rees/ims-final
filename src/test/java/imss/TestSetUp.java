@@ -12,9 +12,9 @@ public class TestSetUp {
 
 	@Test
 	public void test() {
-		SetUp setup=new SetUp();
+		//SetUp setup=new SetUp();
 		MysqlCustomerDao d=new MysqlCustomerDao("noobb");
-		assertNotNull(setup);
+		assertNotNull(d);	
 		
 		
 	}
