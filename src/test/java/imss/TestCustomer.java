@@ -10,7 +10,7 @@ public class TestCustomer {
 
 	@Test
 	public void test() {
-		Customer customer=new Customer((long)3,"","","");
+		Customer customer=new Customer((long)3,"s","s","s");
 		assertNotNull(customer);
 		customer.getEmail();
 		customer.getFirstname();

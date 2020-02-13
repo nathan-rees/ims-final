@@ -9,7 +9,7 @@ public class TestOrderDao {
 
 	@Test
 	public void test() {
-		Customer c=new Customer((long)2,"","","");
+		Customer c=new Customer((long)2,"s","sd","sd");
 		MysqlOrderDao dao=new MysqlOrderDao("noobb");
 		dao.create(c);
 		dao.update(c);

@@ -9,7 +9,7 @@ public class TestItemDao {
 
 	@Test
 	public void test() {
-		Item item=new Item(0, "noobb", 0);
+		Item item=new Item(1, "noobb", 1);
 		MysqlItemDao dao=new MysqlItemDao("noobb");
 		dao.readAll();
 		dao.create(item);

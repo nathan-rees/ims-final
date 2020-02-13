@@ -11,7 +11,7 @@ public class TestCustomerDao {
 
 	@Test
 	public void test() {
-		Customer customer=new Customer((long)3,"","","");
+		Customer customer=new Customer((long)3,"s","s","s");
 		MysqlCustomerDao d=new MysqlCustomerDao("noobb");
 		d.create(customer);
 		d.readAll();
