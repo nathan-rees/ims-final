@@ -1,8 +1,11 @@
 # Project Title
 
-One Paragraph of project description goes here
+This is an inventory management system. It uses a persistant database storage hosted from a GCP server. Implemented in Java 8
+I also have a jenkins server running that is configured to take this github repsoitory so sonarqube can run static code analysis on my project- assisting in the development and testing.
 
 ## Getting Started
+
+First use "git clone" to copy the repository to your local machine.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
