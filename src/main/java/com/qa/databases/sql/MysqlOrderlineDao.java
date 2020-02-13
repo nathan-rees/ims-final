@@ -42,9 +42,9 @@ public class MysqlOrderlineDao implements Dao<Integer>
 	public void update(Integer t) {//updates the quatity and items id (not the orders_id)
 		try {			
 			Statement statement= connection.createStatement();
-			//statement.execute("Update orderline set (items_id="+items_id+" orders_id="+orders_id+" quantity="+quantity+") where orders_id="+orders_id);
 			statement.execute("update orderline set items_id="+items_id+" where orders_id="+orders_id);
 			statement.execute("update orderline set quantity="+quantity+" where orders_id="+orders_id);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

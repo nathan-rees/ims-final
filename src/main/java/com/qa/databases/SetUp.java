@@ -1,5 +1,6 @@
 package com.qa.databases;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,6 +9,7 @@ import com.qa.databases.entities.Item;
 import com.qa.databases.sql.MysqlCustomerDao;
 import com.qa.databases.sql.MysqlItemDao;
 import com.qa.databases.sql.MysqlOrderDao;
+import com.qa.databases.sql.MysqlOrderlineDao;
 
 public class SetUp 
 {
@@ -51,12 +53,10 @@ public class SetUp
 		intro();
 	}
 	public void item() {
-		System.out.println("Enter product name,cost");
-		String productName=userInput();
-		float cost=Float.valueOf(userInput());
-		createItem(productName,cost);
+		createItem();
 		
 		MysqlItemDao i=new MysqlItemDao(password);
+		System.out.println("Enter 0 for adding an item to an existing order");
 		String input=crud();
 		
 		if(input.equals("1"))
@@ -80,16 +80,44 @@ public class SetUp
 			System.out.println("(deleting is based product name entered)");
 			i.delete(item);//delete an item based on its product name
 			System.out.println("Deleted successfully");
+		}else if(input.equals("0"))
+		{
+			createCustomer();
+			orderlineAdd(item,customer);
 		}
 	}
-	public void createItem(String productName,float cost) {
-		this.item=new Item(productName,cost);
+	public void orderlineAdd(Item item,Customer customer)
+	{
+		System.out.println("Enter order ID,quantity");
+		int orderID=Integer.valueOf(userInput());
+		int quantity=Integer.valueOf(userInput());
+		
+		try {
+			MysqlOrderlineDao orderline=new MysqlOrderlineDao(password,(int)item.getId(),orderID,quantity);
+			orderline.create(69);//adding an  linking up the order and item
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
+	public void createItem() {
+		System.out.println("Enter product id,name,cost");
+		long id=Long.valueOf(userInput());
+		String productName=userInput();
+		float cost=Float.valueOf(userInput());
+		this.item=new Item(id,productName,cost);
+	}
+	
 	public void order()
 	{
+		
 		MysqlOrderDao o=new MysqlOrderDao(password);
 		createCustomer();
 		String input=crud();
+		
 		if(input.equals("1"))//need to create total cost
 		{
 			
@@ -125,7 +153,7 @@ public class SetUp
 		}else if(input.equals("2"))
 		{
 			for(Customer lol:c.readAll())
-			System.out.println("email: "+lol.getEmail()+ lol.getFirstname()+lol.getSurname());
+			System.out.println("email: "+lol.getEmail()+"Name: "+ lol.getFirstname()+" "+lol.getSurname());
 			
 		}else if(input.equals("3"))
 		{

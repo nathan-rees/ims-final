@@ -38,7 +38,9 @@ public class MysqlItemDao implements Dao<Item>{
 			while(result.next()) {
 				String product=result.getString("product_name");
 				float cost=result.getFloat("cost");
-				lol.add(new Item(product,cost));
+				long id=result.getLong("id");
+				
+				lol.add(new Item(id,product,cost));
 				}
 			
 		} catch (SQLException e) {
