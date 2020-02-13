@@ -27,10 +27,6 @@ public class MysqlItemDao implements Dao<Item>{
 	}
 		
 
-	public MysqlItemDao() {
-
-	}
-
 
 	public ArrayList readAll() {//return id list
 		ArrayList<Item> lol=new ArrayList<Item>();
