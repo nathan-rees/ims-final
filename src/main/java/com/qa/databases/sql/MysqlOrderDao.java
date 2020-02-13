@@ -20,6 +20,8 @@ public class MysqlOrderDao implements Dao<Customer>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 	}
@@ -34,6 +36,8 @@ public class MysqlOrderDao implements Dao<Customer>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 		
@@ -51,6 +55,8 @@ public class MysqlOrderDao implements Dao<Customer>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 		return lol;
@@ -64,6 +70,8 @@ public class MysqlOrderDao implements Dao<Customer>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 		
@@ -75,6 +83,8 @@ public class MysqlOrderDao implements Dao<Customer>{
 			 statement.executeUpdate("delete from orders where id="+t.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 		

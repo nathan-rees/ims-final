@@ -24,6 +24,8 @@ public class MysqlOrderlineDao implements Dao<Integer>
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		this.items_id=items_id;
 		this.orders_id=orders_id;
@@ -37,6 +39,8 @@ public class MysqlOrderlineDao implements Dao<Integer>
 			statement.executeUpdate("insert into orderline(items_id,orders_id,quantity) values("+items_id+","+orders_id+","+quantity+")");
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			
 		}
 	
 		
@@ -55,6 +59,8 @@ public class MysqlOrderlineDao implements Dao<Integer>
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 	}
@@ -68,6 +74,8 @@ public class MysqlOrderlineDao implements Dao<Integer>
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 	}

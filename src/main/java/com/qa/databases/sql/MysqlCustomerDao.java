@@ -18,8 +18,10 @@ public class MysqlCustomerDao implements Dao<Customer>{
 		try {
 			this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 	}
@@ -32,9 +34,11 @@ public class MysqlCustomerDao implements Dao<Customer>{
 			Statement statement=connection.createStatement();
 			statement.executeUpdate("insert into customers(first_name, last_name,email) values('" + customer.getFirstname() + "','" + customer.getSurname()+"','"+customer.getEmail()+"')");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
+		
 	}
 
 	public void update(Customer t) {//updates customer info
@@ -44,6 +48,8 @@ public class MysqlCustomerDao implements Dao<Customer>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 		
@@ -57,6 +63,8 @@ public class MysqlCustomerDao implements Dao<Customer>{
 			 statement.executeUpdate("delete from customers where id="+c.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			
 		}
 	}
 
@@ -75,7 +83,10 @@ public class MysqlCustomerDao implements Dao<Customer>{
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		} 
+		} finally {
+			
+		}
+		
 		return customers;
 		
 	}

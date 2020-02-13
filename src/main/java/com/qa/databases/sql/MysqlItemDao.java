@@ -21,12 +21,14 @@ public class MysqlItemDao implements Dao<Item>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 	}
 		
 
 	public MysqlItemDao() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 
@@ -46,6 +48,8 @@ public class MysqlItemDao implements Dao<Item>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 		return lol;
@@ -60,6 +64,8 @@ public class MysqlItemDao implements Dao<Item>{
 		} catch (SQLException e) {
 			System.out.println(e);
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 	}
@@ -71,6 +77,8 @@ public class MysqlItemDao implements Dao<Item>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 		
@@ -84,6 +92,8 @@ public class MysqlItemDao implements Dao<Item>{
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			
 		}
 		
 	}
