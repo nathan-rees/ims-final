@@ -2,6 +2,7 @@ package com.qa.databases.entities;
 
 public class Item {
 	private String productName;
+	private long id;
 	private float cost;
 	private long id;
 
