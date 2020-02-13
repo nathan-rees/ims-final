@@ -13,6 +13,7 @@ public class Runner {
 	public static void main(String[] args) throws SQLException {
 		SetUp s=new SetUp();
 		System.out.println("dleeet");
+		
 //		MysqlCustomerDao dao=new MysqlCustomerDao("Nuggetpowerfish1");
 //		Customer c=new Customer((long)1,"one","lol","@noob");
 //		dao.update(c);
