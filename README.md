@@ -20,10 +20,11 @@ Create a new item and post your github in the config. Add some execute commands 
 
 ### Prerequisites
 
-You will need to have a DBMS,git,java ide, on your local machine cloud service (or server)
 
 ```
-Give examples
+
+You will need to have a DBMS,git,java ide, on your local machine cloud service (or server)
+
 ```
 
 ### Installing
@@ -33,10 +34,11 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+Install eclipse
+install java sdk and add path to environment variables
+
 ```
 
-And repeat
 
 ```
 until finished
@@ -46,30 +48,24 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
-
-### Unit Tests 
-
-Explain what these tests test, why and how to run them
-
 ```
-Give an example
+These should be automatically updated within the CI pipeline via jenkin, when you push to your specified github repository
+(given you have set up jenkins correctly)
+Alternatively, you can run the it manually through jenkins
+
+I have included unit tests. These test make sure to see if the classes are working correctly
+The object should be created without any issues. 
+However the databse data extraction is not included and this subsequently would need an integration test for further improvement.
+
 ```
 
 ### Integration Tests 
 Explain what these tests test, why and how to run them
 
 ```
-Give an example
+Using moquito framework, you can create a test database- and override some functions so they return 
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
@@ -85,7 +81,7 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Nathan Rees** - *Initial work* - (https://github.com/nathan-rees
 
 ## License
 
