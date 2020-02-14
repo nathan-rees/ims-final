@@ -83,14 +83,3 @@ We use [SemVer](http://semver.org/) for versioning.
 
 * **Nathan Rees** - *Initial work* - (https://github.com/nathan-rees
 
-## License
-
-This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
-
-*For help in [Choosing a license](https://choosealicense.com/)*
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
