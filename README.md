@@ -57,6 +57,8 @@ I have included unit tests. These test make sure to see if the classes are worki
 The object should be created without any issues. 
 However the databse data extraction is not included and this subsequently would need an integration test for further improvement.
 
+http://35.189.123.196/sonarqube/dashboard?id=com.qa.ims%3Anathan-r-ims
+
 ```
 
 
