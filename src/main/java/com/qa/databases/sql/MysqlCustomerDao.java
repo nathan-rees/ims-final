@@ -1,4 +1,7 @@
 package com.qa.databases.sql;
+/**
+ * gets connection to sql and executes the statment
+ */
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,6 +17,9 @@ public class MysqlCustomerDao implements Dao<Customer>{
 	private Connection connection;
 
 	public MysqlCustomerDao(String password) 
+	/**
+	 * sets up the connection using the password
+	 */
 	{	
 		try {
 			this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);

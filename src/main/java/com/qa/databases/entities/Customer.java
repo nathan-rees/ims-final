@@ -1,5 +1,10 @@
 package com.qa.databases.entities;
-
+/**
+ * customer object is basically used to store database.
+ * makes manipulating everything very easier within the program
+ * @author Me
+ *
+ */
 public class Customer {
 	private Long id;
 	private String firstname;

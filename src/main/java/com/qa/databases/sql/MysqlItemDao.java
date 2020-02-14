@@ -11,11 +11,17 @@ import com.qa.databases.entities.Customer;
 import com.qa.databases.entities.Item;
 
 public class MysqlItemDao implements Dao<Item>{
-	
+	/**
+	 * creates the connection
+	 * holds the crud functionalities that executes the sql statemnts
+	 */
 	private Connection connection;
 	
 	public MysqlItemDao(String password)  
 	{	
+		/**
+		 * sets up the connection using the password
+		 */
 		try {
 			this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
 		} catch (SQLException e) {

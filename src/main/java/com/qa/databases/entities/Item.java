@@ -1,4 +1,10 @@
 package com.qa.databases.entities;
+/**
+ *  item object is basically used to store database.
+ * makes manipulating everything very easier within the program
+ * @author Me
+ *
+ */
 
 public class Item {
 	private String productName;

@@ -10,11 +10,18 @@ import java.util.ArrayList;
 import com.qa.databases.entities.Customer;
 
 public class MysqlOrderDao implements Dao<Customer>{
+	/**
+	 * creates the connection
+	 * holds the crud functionalities that executes the sql statemnts
+	 */
 
 	private Connection connection;
 
 	public MysqlOrderDao(String password) 
 	{	
+		/**
+		 * sets up the connection using the password
+		 */
 		try {
 			this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
 		} catch (SQLException e) {
@@ -28,6 +35,12 @@ public class MysqlOrderDao implements Dao<Customer>{
 	
 	
 	public void create(Customer t) {
+		/**
+		 * create
+		 * a
+		 * customer
+		 * 
+		 */
 		try {
 			Statement statement =connection.createStatement();
 			//statement.executeUpdate("Insert into orders values(id=1,customers_id="+t.getId()+")");

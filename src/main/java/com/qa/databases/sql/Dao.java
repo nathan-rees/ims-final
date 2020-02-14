@@ -1,4 +1,8 @@
 package com.qa.databases.sql;
+/**
+ * used so the dao objects have these methods
+ * for the mvp
+ */
 
 import java.awt.List;
 import java.util.ArrayList;

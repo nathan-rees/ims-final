@@ -1,5 +1,7 @@
 package com.qa.databases;
-
+/**
+ * just a runner :)
+ */
 import java.sql.SQLException;
 import java.util.ArrayList;
 

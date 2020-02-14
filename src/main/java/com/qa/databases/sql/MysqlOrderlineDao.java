@@ -17,7 +17,12 @@ public class MysqlOrderlineDao implements Dao<Integer>
 	private Connection connection;
 	private int items_id,orders_id,quantity;
 	public MysqlOrderlineDao(String password,int items_id,int orders_id,int quantity) 
-	{	
+	{		
+		/**
+		 * sets up the connection using the password
+		 * but also takes in extra data cos the orderline
+		 * needs extra data to link
+		 */
 		
 		try {
 			this.connection=DriverManager.getConnection("jdbc:mysql://34.67.75.2:3306/ims","root",password);
@@ -53,6 +58,12 @@ public class MysqlOrderlineDao implements Dao<Integer>
 
 	public void update(Integer t) {//updates the quatity and items id (not the orders_id)
 		try {			
+			/**
+			 * updates 
+			 * the 
+			 * sql
+			 * database
+			 */
 			Statement statement= connection.createStatement();
 			statement.execute("update orderline set items_id="+items_id+" where orders_id="+orders_id);
 			statement.execute("update orderline set quantity="+quantity+" where orders_id="+orders_id);
@@ -67,6 +78,12 @@ public class MysqlOrderlineDao implements Dao<Integer>
 
 	public void delete(Integer t) {
 		try {
+			/**
+			 * deletes
+			 * an
+			 * object
+			 * 
+			 */
 			Statement statement=connection.createStatement();
 			statement.executeUpdate("delete from orderline where orders_id="+orders_id);
 
