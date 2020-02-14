@@ -1,4 +1,10 @@
 package com.qa.databases;
+/**
+ * setup gets user input and executes the right statements
+ * 1
+ * 1
+ *1
+ */
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,14 +22,15 @@ public class SetUp
 	private String password;
 	private Customer customer;
 	private Item item;
-	public SetUp()
-	{
-		
-	}
 	public String crud() {
 		/**
 		 * sees what the user wants to do with the data
+		 * 
+		 * 
+		 * 
 		 */
+		
+		
 		System.out.println("press 1 for create ");
 		System.out.println("press 2 for viewing all");
 		System.out.println("press 3 for update ");

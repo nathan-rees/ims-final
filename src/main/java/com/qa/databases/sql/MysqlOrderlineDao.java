@@ -69,9 +69,7 @@ public class MysqlOrderlineDao implements Dao<Integer>
 		try {
 			Statement statement=connection.createStatement();
 			statement.executeUpdate("delete from orderline where orders_id="+orders_id);
-			
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
