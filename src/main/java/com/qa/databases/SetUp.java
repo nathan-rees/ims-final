@@ -36,15 +36,8 @@ public class SetUp
 		 * gets the password for the database.
 		 * makes the user to enter a customer or item to see if they want to add it
 		 */
-		System.out.println("Enter the Password for the database..");
-		password=userInput();
-		System.out.println("Press 1 for editing a customer");
-		System.out.println("Press 2 for editing an order");
-		System.out.println("Press 3 for editing an item");
-		System.out.println("Press 4 for editing an orderline");
-		String input=userInput();
-		
-		
+		System.out.println("Enter the Password for the database..");password=userInput();System.out.println("Press 1 for editing a customer");System.out.println("Press 2 for editing an order");System.out.println("Press 3 for editing an item");System.out.println("Press 4 for editing an orderline");
+String input=userInput();		
 		if(input.equals("1"))
 		{
 			customer();
@@ -60,12 +53,10 @@ public class SetUp
 		
 		else {
 			System.out.println("fingers too t h i c c");
-			intro();
 		}
 		intro();
 	}
 	private void orderline() {
-		// TODO Auto-generated method stub
 		System.out.println("Enter items ID,orders ID, quantity");
 		int itemsID=Integer.valueOf(userInput());
 		int orderID=Integer.valueOf(userInput());
